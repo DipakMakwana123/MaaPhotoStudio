@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Maa Photo Studio</title>
+  <meta name="description" content="Browse the Maa Photo Studio gallery featuring weddings, engagements, portraits, events and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="icon" href="/assets/favicon.ico">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">Maa</span> Photo Studio
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">☰</button>
+        <ul id="primary-nav" class="nav-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a class="active" href="/gallery.html">Gallery</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Gallery</h1>
+        <p>A glimpse of stories we captured.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <ul class="gallery-grid" id="gallery" data-lightbox>
+          <!-- Placeholder images; replace with real work -->
+          <li><a href="https://images.unsplash.com/photo-1522673607200-164d1b6ce486" target="_blank" rel="noopener"><img alt="Wedding" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&auto=format&fit=crop&q=60"></a></li>
+          <li><a href="https://images.unsplash.com/photo-1519741497674-611481863552" target="_blank" rel="noopener"><img alt="Engagement" src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&auto=format&fit=crop&q=60"></a></li>
+          <li><a href="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b" target="_blank" rel="noopener"><img alt="Portrait" src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=600&auto=format&fit=crop&q=60"></a></li>
+          <li><a href="https://images.unsplash.com/photo-1510511459019-5dda7724fd87" target="_blank" rel="noopener"><img alt="Event" src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=600&auto=format&fit=crop&q=60"></a></li>
+          <li><a href="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba" target="_blank" rel="noopener"><img alt="Newborn" src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&auto=format&fit=crop&q=60"></a></li>
+          <li><a href="https://images.unsplash.com/photo-1511795409834-ef04bbd61622" target="_blank" rel="noopener"><img alt="Birthday" src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&auto=format&fit=crop&q=60"></a></li>
+        </ul>
+        <div class="lightbox-backdrop" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+          <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Close">×</button>
+            <img alt="Preview" id="lightbox-image" src="">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Maa Photo Studio — Bhavnagar</p>
+      <ul class="footer-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a class="active" href="/gallery.html">Gallery</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
+

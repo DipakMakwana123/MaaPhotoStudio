@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Maa Photo Studio</title>
+  <meta name="description" content="Contact Maa Photo Studio in Bhavnagar for bookings and inquiries. Phone: 9974832749, Email: dipakmakwana123@gmail.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="icon" href="/assets/favicon.ico">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">Maa</span> Photo Studio
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">☰</button>
+        <ul id="primary-nav" class="nav-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/gallery.html">Gallery</a></li>
+          <li><a class="active" href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear about your event.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container two-col contact">
+        <div>
+          <h2>Get in touch</h2>
+          <address>
+            Maa Photo Studio,<br>
+            34, Municipality Complex,<br>
+            Shivaji Circle,<br>
+            Ghogha Jakat Naka, Bhavnagar.<br>
+            Mobile: <a href="tel:+919974832749">9974832749</a><br>
+            Email: <a href="mailto:dipakmakwana123@gmail.com">dipakmakwana123@gmail.com</a>
+          </address>
+          <div class="contact-cta">
+            <a class="btn btn-primary" href="tel:+919974832749">Call Now</a>
+            <a class="btn btn-ghost" href="mailto:dipakmakwana123@gmail.com?subject=Booking%20Inquiry%20-%20Maa%20Photo%20Studio">Email Us</a>
+          </div>
+        </div>
+        <form class="contact-form" name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required>
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email">
+          </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Maa Photo Studio — Bhavnagar</p>
+      <ul class="footer-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/gallery.html">Gallery</a></li>
+        <li><a class="active" href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
+
