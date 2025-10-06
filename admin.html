@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Maa Photo Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="icon" href="/assets/favicon.ico">
+  <style>
+    .admin-container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+    .admin-header { margin-bottom: 30px; }
+    .admin-nav { display: flex; gap: 10px; margin-bottom: 30px; }
+    .admin-nav button { padding: 10px 20px; border: 1px solid var(--border); background: white; border-radius: 8px; cursor: pointer; }
+    .admin-nav button.active { background: var(--primary); color: white; }
+    .admin-section { display: none; }
+    .admin-section.active { display: block; }
+    .admin-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    .admin-table th, .admin-table td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); }
+    .admin-table th { background: var(--surface); font-weight: 600; }
+    .admin-form { background: white; padding: 20px; border: 1px solid var(--border); border-radius: 12px; margin-bottom: 20px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
+    .form-row.full { grid-template-columns: 1fr; }
+    .form-field input, .form-field textarea, .form-field select { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; }
+    .btn-small { padding: 6px 12px; font-size: 14px; }
+    .status-badge { padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 500; }
+    .status-new { background: #dbeafe; color: #1e40af; }
+    .status-read { background: #d1fae5; color: #065f46; }
+    .status-replied { background: #fef3c7; color: #92400e; }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <div class="admin-header">
+      <h1>Maa Photo Studio - Admin Dashboard</h1>
+      <p>Manage your website content and view inquiries</p>
+    </div>
+
+    <nav class="admin-nav">
+      <button class="admin-nav-btn active" data-section="contacts">Contacts</button>
+      <button class="admin-nav-btn" data-section="gallery">Gallery</button>
+      <button class="admin-nav-btn" data-section="testimonials">Testimonials</button>
+      <button class="admin-nav-btn" data-section="services">Services</button>
+    </nav>
+
+    <!-- Contacts Section -->
+    <div id="contacts" class="admin-section active">
+      <h2>Contact Inquiries</h2>
+      <div class="admin-table-container">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Message</th>
+              <th>Status</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="contacts-table-body">
+            <!-- Dynamic content -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <div id="gallery" class="admin-section">
+      <h2>Gallery Management</h2>
+      <div class="admin-form">
+        <h3>Add New Image</h3>
+        <form id="gallery-form">
+          <div class="form-row">
+            <div class="form-field">
+              <label>Title</label>
+              <input type="text" name="title" required>
+            </div>
+            <div class="form-field">
+              <label>Category</label>
+              <select name="category" required>
+                <option value="wedding">Wedding</option>
+                <option value="engagement">Engagement</option>
+                <option value="portrait">Portrait</option>
+                <option value="family">Family</option>
+                <option value="maternity">Maternity</option>
+                <option value="newborn">Newborn</option>
+                <option value="birthday">Birthday</option>
+                <option value="event">Event</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Image URL</label>
+              <input type="url" name="image_url" required>
+            </div>
+            <div class="form-field">
+              <label>Thumbnail URL</label>
+              <input type="url" name="thumbnail_url">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Alt Text</label>
+              <input type="text" name="alt_text">
+            </div>
+            <div class="form-field">
+              <label>Sort Order</label>
+              <input type="number" name="sort_order" value="0">
+            </div>
+          </div>
+          <div class="form-row full">
+            <div class="form-field">
+              <label>Description</label>
+              <textarea name="description" rows="3"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Add Image</button>
+        </form>
+      </div>
+      <div class="admin-table-container">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Status</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="gallery-table-body">
+            <!-- Dynamic content -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div id="testimonials" class="admin-section">
+      <h2>Testimonials Management</h2>
+      <div class="admin-form">
+        <h3>Add New Testimonial</h3>
+        <form id="testimonial-form">
+          <div class="form-row">
+            <div class="form-field">
+              <label>Client Name</label>
+              <input type="text" name="client_name" required>
+            </div>
+            <div class="form-field">
+              <label>Location</label>
+              <input type="text" name="client_location">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Rating</label>
+              <select name="rating" required>
+                <option value="5">5 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="2">2 Stars</option>
+                <option value="1">1 Star</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>
+                <input type="checkbox" name="is_featured"> Featured
+              </label>
+            </div>
+          </div>
+          <div class="form-row full">
+            <div class="form-field">
+              <label>Testimonial</label>
+              <textarea name="testimonial" rows="4" required></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Add Testimonial</button>
+        </form>
+      </div>
+      <div class="admin-table-container">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Client</th>
+              <th>Location</th>
+              <th>Rating</th>
+              <th>Testimonial</th>
+              <th>Featured</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="testimonials-table-body">
+            <!-- Dynamic content -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Services Section -->
+    <div id="services" class="admin-section">
+      <h2>Services Management</h2>
+      <div class="admin-form">
+        <h3>Add New Service</h3>
+        <form id="service-form">
+          <div class="form-row">
+            <div class="form-field">
+              <label>Service Name</label>
+              <input type="text" name="name" required>
+            </div>
+            <div class="form-field">
+              <label>Price Range</label>
+              <input type="text" name="price_range" placeholder="e.g., ₹5,000 - ₹15,000">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Sort Order</label>
+              <input type="number" name="sort_order" value="0">
+            </div>
+            <div class="form-field">
+              <label>
+                <input type="checkbox" name="is_active" checked> Active
+              </label>
+            </div>
+          </div>
+          <div class="form-row full">
+            <div class="form-field">
+              <label>Description</label>
+              <textarea name="description" rows="3"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Add Service</button>
+        </form>
+      </div>
+      <div class="admin-table-container">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Price Range</th>
+              <th>Sort Order</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="services-table-body">
+            <!-- Dynamic content -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Supabase CDN -->
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script src="/assets/js/supabase-config.js"></script>
+  <script src="/assets/js/admin.js"></script>
+</body>
+</html>
